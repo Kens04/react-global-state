@@ -1,9 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { useContext } from "react";
+
+import { AdminFlagContext } from "./components/providers/AdminFlagProvider";
 import { Card } from "./components/Card";
 
 export const App = () => {
+  // Context 内の isAdmin と更新関数を取得
+  const { isAdmin, setIsAdmin } = useContext(AdminFlagContext);
+
   // 管理者フラグ
-  const [isAdmin, setIsAdmin] = useState(false);
+  // const [isAdmin, setIsAdmin] = useState(false);
 
   // [切り替え]押下時
   const onClickSwitch = () => setIsAdmin(!isAdmin);
